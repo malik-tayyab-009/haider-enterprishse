@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Haider Enterprises </title>
+
+    <meta name="description"
+          content="Haider Enterprises- Professional Transportation and Logistics Company">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        header {
+            background: #0b1f35;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 17px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #f4b400;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #f4b400;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            color: white;
+
+            background:
+                linear-gradient(rgba(5,20,35,0.82), rgba(5,20,35,0.82)),
+                linear-gradient(135deg, #0b1f35, #173b60);
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #f4b400;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #e5e5e5;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            border-radius: 7px;
+            background: #f4b400;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: #ffc933;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #0b1f35;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 75px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #0b1f35;
+        }
+
+        .section-title p {
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #0b1f35;
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .about-card {
+            background: #0b1f35;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .about-card h3 {
+            color: #f4b400;
+            margin-bottom: 15px;
+        }
+
+        /* STATS */
+
+        .stats {
+            background: #0b1f35;
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 30px 15px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-7px);
+            background: rgba(255,255,255,0.14);
+        }
+
+        .stat-box .number {
+            font-size: 42px;
+            color: #f4b400;
+            font-weight: bold;
+        }
+
+        .stat-box h3 {
+            margin-top: 5px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: #f5f7fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #0b1f35;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+        /* WHY US */
+
+        .why-us {
+            background: white;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .why-card {
+            padding: 25px;
+            border-left: 5px solid #f4b400;
+            background: #f8f9fb;
+            border-radius: 8px;
+        }
+
+        .why-card h3 {
+            color: #0b1f35;
+            margin-bottom: 8px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #102d4b;
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .contact-info h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 12px 0;
+            color: #e2e2e2;
+        }
+
+        .contact-box {
+            background: rgba(255,255,255,0.08);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .contact-box input,
+        .contact-box textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 14px;
+            border: none;
+            border-radius: 6px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .contact-box textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #071625;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        footer span {
+            color: #f4b400;
+        }
+
+        /* WHATSAPP */
+
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #25D366;
+            color: white;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 28px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+            z-index: 999;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .about-grid,
+            .contact-grid,
+            .why-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                Haider <span>Enterprises</span>
+            </div>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#fleet">Fleet</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Haider <span>Enterprises</span>
+            </h1>
+
+            <h2>
+                
+            </h2>
+
+            <p>
+                Professional Transportation & Logistics Solutions
+                You Can Trust
+            </p>
+
+            <a href="#contact" class="btn">
+                Contact Us
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+                Learn More
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>About Our Company</h2>
+                <p>Reliable transportation for a growing business.</p>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <h3>
+                        Haider Enterprises 
+                    </h3>
+
+                    <p>
+                        Haider Enterprises  is a
+                        professional transportation and logistics company
+                        committed to providing reliable, safe and efficient
+                        transportation services.
+                    </p>
+
+                    <p>
+                        Our experienced management, drivers, supervisors
+                        and support staff work together to deliver
+                        dependable services to our valued clients.
+                    </p>
+
+                    <p>
+                        We focus on safety, timely operations,
+                        professional management and customer satisfaction.
+                    </p>
+
+                </div>
+
+                <div class="about-card">
+
+                    <h3>Our Mission</h3>
+
+                    <p>
+                        To provide dependable transportation and logistics
+                        solutions through professional service,
+                        responsible operations and a commitment to safety.
+                    </p>
+
+                    <br>
+
+                    <h3>Our Vision</h3>
+
+                    <p>
+                        To become a trusted and recognized transportation
+                        company by continuously improving our services,
+                        fleet and operational standards.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPANY STATS -->
+
+    <section class="stats" id="fleet">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2 style="color:white;">
+                    Our Company at a Glance
+                </h2>
+                <p style="color:#ddd;">
+                    Our current operational strength
+                </p>
+            </div>
+
+            <div class="stats-grid">
+
+                <!-- CHANGE NUMBERS HERE -->
+
+                <div class="stat-box">
+                    <div class="number" data-number="50">0</div>
+                    <h3>Trucks</h3>
+                </div>
+
+                <div class="stat-box">
+                    <div class="number" data-number="30">0</div>
+                    <h3>Loaders</h3>
+                </div>
+
+                <div class="stat-box">
+                    <div class="number" data-number="100">0</div>
+                    <h3>Drivers</h3>
+                </div>
+
+                <div class="stat-box">
+                    <div class="number" data-number="15">0</div>
+                    <h3>Supervisors</h3>
+                </div>
+
+                <div class="stat-box">
+                    <div class="number" data-number="2">0</div>
+                    <h3>Accountants</h3>
+                </div>
+
+                <div class="stat-box">
+                    <div class="number" data-number="20">0</div>
+                    <h3>Support Staff</h3>
+                </div>
+
+                <div class="stat-box">
+                    <div class="number" data-number="10">0</div>
+                    <h3>Years Experience</h3>
+                </div>
+
+                <div class="stat-box">
+                    <div class="number" data-number="100">20</div>
+                    <h3>Client Satisfaction %</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services" id="services">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Our Services</h2>
+
+                <p>
+                    Professional transportation and logistics services
+                </p>
+
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+
+                    <div class="service-icon">🚚</div>
+
+                    <h3>Transportation</h3>
+
+                    <p>
+                        Reliable transportation solutions for
+                        commercial and industrial requirements.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">📦</div>
+
+                    <h3>Goods Transportation</h3>
+
+                    <p>
+                        Safe and efficient movement of goods
+                        from one destination to another.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">🏗️</div>
+
+                    <h3>Heavy Equipment</h3>
+
+                    <p>
+                        Transportation support for heavy equipment,
+                        machinery and project requirements.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">🛣️</div>
+
+                    <h3>Long Distance Transport</h3>
+
+                    <p>
+                        Professional long-distance transportation
+                        with dependable fleet management.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">📍</div>
+
+                    <h3>Logistics Support</h3>
+
+                    <p>
+                        Operational and logistics support designed
+                        to keep transportation activities moving.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">🛡️</div>
+
+                    <h3>Safe Operations</h3>
+
+                    <p>
+                        Safety-focused operations with responsible
+                        drivers and professional supervision.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY US -->
+
+    <section class="why-us">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Why Choose Us?</h2>
+
+                <p>
+                    Built around reliability and professional service.
+                </p>
+
+            </div>
+
+            <div class="why-grid">
+
+                <div class="why-card">
+                    <h3>Professional Team</h3>
+                    <p>
+                        Experienced drivers, supervisors,
+                        management and support staff.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <h3>Reliable Fleet</h3>
+                    <p>
+                        A growing fleet designed to support
+                        transportation and logistics operations.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <h3>Safety First</h3>
+                    <p>
+                        We emphasize responsible driving,
+                        operational discipline and safety.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <h3>Customer Satisfaction</h3>
+                    <p>
+                        Our goal is to provide dependable
+                        service and build long-term relationships.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2 style="color:white;">
+                    Contact Us
+                </h2>
+
+                <p style="color:#ddd;">
+                    Get in touch with Haider Enterprises
+                </p>
+
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-info">
+
+                    <h3>
+                        Haider Enterprises
+                    </h3>
+
+                    <!-- CHANGE THESE DETAILS -->
+
+                    <p>
+                        📍 Location:
+                        Pakistan
+                    </p>
+
+                    <p>
+                        📞 Phone:
+                        +92 3333221917
+                    </p>
+
+                    <p>
+                        📧 Email:
+                        haiderenterpriseshe123.com
+                    </p>
+
+                    <p>
+                        🚚 Transportation & Logistics
+                    </p>
+
+                    <br>
+
+                    <a
+                        href="tel:0370-0243810"
+                        class="btn">
+                        Call Now
+                    </a>
+
+                </div>
+
+
+                <div class="contact-box">
+
+                    <input
+                        type="text"
+                        id="tayyab malik sun"
+                        placeholder="Your Name"
+                    >
+
+                    <input
+                        type="text"
+                        id="phone"
+                        placeholder="Your Phone"
+                    >
+
+                    <textarea
+                        id="message"
+                        placeholder="Write your message">
+                    </textarea>
+
+                    <button
+                        class="btn"
+                        onclick="sendMessage(inlimitied)">
+                        Send Message
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © <span id="year"></span>
+            Haider Enterprises (Private) Limited.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- WHATSAPP -->
+
+    <!-- CHANGE 03333221917 TO YOUR WHATSAPP NUMBER -->
+
+    <a
+        class="whatsapp"
+        href="https://wa.me/03333221917"
+        target="_blank"3517301000001645
+        title="Contact on WhatsApp">
+        ☎
+    </a>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        /* CURRENT YEAR */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        /* NUMBER ANIMATION */
+
+        const counters =
+            document.querySelectorAll(".number");
+
+        counters.forEach(counter => {
+
+            const target =
+                Number(counter.getAttribute("data-number"));
+
+            let current = 0;
+
+            const speed = 25;
+
+            const updateCounter = () => {
+
+                if (current < target) {
+
+                    current++;
+
+                    counter.textContent = current;
+
+                    setTimeout(updateCounter, speed);
+
+                } else {
+
+                    counter.textContent = target;
+
+                }
+
+            };
+
+            updateCounter();
+
+        });
+
+
+        /* WHATSAPP MESSAGE */
+
+        function sendMessage() {
+
+            const name =
+                document.getElementById("name").value.trim();
+
+            const phone =
+                document.getElementById("phone").value.trim();
+
+            const message =
+                document.getElementById("message").value.trim();
+
+
+            if (!name || !phone || !message) {
+
+                alert("Please fill all fields.");
+
+                return;
+
+            }
+
+
+            const whatsappNumber =
+                "03333221917";
+
+
+            const text =
+                `Hello Haider Enterprises,%0A%0A` +
+                `Name: ${name}%0A` +
+                `Phone: ${phone}%0A` +
+                `Message: ${message}`;
+
+
+            window.open(
+                `https://wa.me/${whatsappNumber}?text=${text}`,
+                "_blank"
+            );
+
+        }
+
+    </script>
+    haiderenterpriseshe123@gmail.com
+    03333221917
+
+
+</body>
+</html>
